@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: k3 OpenWrt
+name: k2p OpenWrt
 
 on:
   release:
@@ -24,7 +24,7 @@ on:
 env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: dev-19.07
-  CONFIG_FILE: k3.config
+  CONFIG_FILE: k2p.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
   SSH_ACTIONS: true
@@ -77,7 +77,6 @@ jobs:
         cd openwrt
         ../$DIY_SH
         make defconfig
-        sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3|' target/linux/bcm53xx/image/Makefile
         
     #- name: SSH connection to Actions
     #  uses: P3TERX/debugger-action@master
